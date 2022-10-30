@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
 export const Top = (props) => {
@@ -34,11 +34,13 @@ function Home(props) {
         <span className="iconfont search text-[25px]">&#xe62b;</span>
       </Top>
       <Tab>
-        <NavLink className={({ isActive }) => (isActive ? " selected" : "")} to="/recommend"><TabItem><span > 推荐 </span></TabItem></NavLink>
+        <NavLink className={({ isActive }) => (isActive ? " selected" : "")} to="/"><TabItem><span > 推荐 </span></TabItem></NavLink>
         <NavLink className={({ isActive }) => (isActive ? " selected" : "")} to="/singers"><TabItem><span > 歌手 </span></TabItem></NavLink>
         <NavLink className={({ isActive }) => (isActive ? " selected" : "")} to="/rank"><TabItem><span > 排行榜 </span></TabItem></NavLink>
       </Tab>
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   )
 }

@@ -1,0 +1,43 @@
+.extend-click {
+  @apply relative before:(absolute -inset-[10px]);
+}
+
+.uno-top {
+  @apply flex justify-between py-[5px] px-[10px] bg-[#d44439] 
+  [&>span]:(leading-[40px] text-[#f1f1f1] text-[20px]);
+}
+
+.uno-tab {
+  @apply h-[44px] flex justify-around bg-[#d44439] 
+  [&>a]:(flex-1 py-[2px] text-[14px] text-[#e4e4e4]);
+}
+
+.uno-selected {
+  @apply [&>span]:(py-[3px] font-bold border-solid
+  text-[#f1f1f1] border-bottom-2 border-[#f1f1f1]);
+}
+
+.uno-tab-item {
+  @apply h-full flex justify-center items-center;
+}
+
+.slider-wrapper {
+  @apply relative box-border w-full h-full m-[auto] bg-white;
+}
+
+.slider-wrapper .before {
+  @apply absolute top-0 h-[60%] w-full bg-[#d44439];
+}
+
+.slider-container {
+  @apply relative w-[98%] h-40 overflow-hidden m-[auto]
+  rounded-1.5;
+}
+
+.slider-nav {
+  @apply absolute block w-full h-full;
+}
+
+.swiper-pagination-bullet-active {
+  background: #d44439;
+}

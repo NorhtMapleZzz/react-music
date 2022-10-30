@@ -4,6 +4,7 @@ import App from './App'
 import 'uno.css'
 import './assets/iconfont/iconfont.css'
 import './assets/css/reset.css'
+import '@/assets/css/index.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
