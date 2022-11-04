@@ -1,37 +1,50 @@
 import { memo, useEffect, useState } from 'react';
-import "swiper/swiper.min.css";
-import Swiper from "swiper";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from 'swiper';
+import "swiper/css";
+import "swiper/css/pagination"
 interface Props {
-  bannerList: any[]
+  bannerList: { imageUrl: string}[]
 }
 
 function Slider(props: Props) {
-  const [sliderSwiper, setSliderSwiper] = useState<Swiper>(null);
+  // const [sliderSwiper, setSliderSwiper] = useState<Swiper>(null);
   const { bannerList } = props;
 
-  useEffect(() => {
-    if (bannerList.length && !sliderSwiper) {
-      let newSliderSwiper = new Swiper(".slider-container", {
-        loop: true,
-        autoplay: {delay: 3000, disableOnInteraction: false},
-        pagination: {el:'.swiper-pagination'}
-      })
-      setSliderSwiper(newSliderSwiper)
-    }
-  }, [bannerList.length, sliderSwiper])
+  // useEffect(() => {
+  //   if (bannerList.length && !sliderSwiper) {
+  //     let newSliderSwiper = new Swiper(".slider-container", {
+  //       loop: true,
+  //       autoplay: {delay: 3000, disableOnInteraction: false},
+  //       pagination: {el:'.swiper-pagination'}
+  //     })
+  //     setSliderSwiper(newSliderSwiper)
+  //   }
+  // }, [bannerList.length, sliderSwiper])
 
   return (
     <div className='slider-wrapper'>
       <div className='slider-container'>
         <div className="swiper-wrapper">
-          { bannerList.map((slider, index) => (
-            <div className="swiper-slide" key={index}>
-              <div className="slider-nav">
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={10}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false
+            }}
+            pagination={{ el: '.swiper-pagination', clickable: true}}
+          >
+            {bannerList.map((slider, index) => (
+              <SwiperSlide key={index}>
                 <img className='w-full h-full' src={slider.imageUrl} alt="推荐" />
-              </div>
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          
         </div>
         <div className="swiper-pagination"></div>
       </div>
