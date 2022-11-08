@@ -1,4 +1,4 @@
-import { ForwardedRef, forwardRef, memo, Ref, useEffect, useImperativeHandle, useRef, useState } from "react"
+import { forwardRef, memo, Ref, useEffect, useImperativeHandle, useRef, useState } from "react"
 import BScroll from 'better-scroll';
 
 type Props = {
@@ -49,6 +49,7 @@ const Scroll = forwardRef((props: Partial<Props>, ref: Ref<any>) => {
   useEffect(() => {
     if (!bScroll || !onScroll) return
     bScroll.on('scroll', (scroll) => {
+      console.log(scroll);
       onScroll(scroll)
     })
     return () => {
@@ -63,6 +64,9 @@ const Scroll = forwardRef((props: Partial<Props>, ref: Ref<any>) => {
         pullUp()
       }
     })
+    return () =>{
+      bScroll.off('scrollEnd')
+    }
   }, [pullUp, bScroll])
 
   useEffect(() => {
@@ -70,6 +74,7 @@ const Scroll = forwardRef((props: Partial<Props>, ref: Ref<any>) => {
     bScroll.on('touchEnd', (pos: {y: number}) => {
       if (pos.y > 50) {
         pullDown()
+        console.log(2);
       }
     })
     return () => {

@@ -1,7 +1,7 @@
 import { getCount } from "@/utils"
 import { memo } from "react"
 
-type Props = {
+export type RecommendListProps = {
   recommendList: {
     id: number
     picUrl: string
@@ -10,7 +10,7 @@ type Props = {
   }[]
 }
 
-function RecommendList(props: Props) {
+function RecommendList(props: RecommendListProps) {
 
   return (
     <div className="list-wrapper">

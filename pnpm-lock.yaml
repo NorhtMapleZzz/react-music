@@ -1,13 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@reduxjs/toolkit': ^1.9.0
   '@types/node': ^18.11.5
   '@types/react': ^18.0.17
   '@types/react-dom': ^18.0.6
   '@unocss/transformer-variant-group': ^0.46.0
   '@vitejs/plugin-react': ^2.1.0
   axios: ^1.1.3
-  better-scroll: 2.0.0-beta.10
+  better-scroll: ^2.5.0
   immutable: ^4.1.0
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -15,9 +16,6 @@ specifiers:
   react-router: ^6.4.2
   react-router-config: ^5.1.1
   react-router-dom: ^6.4.2
-  redux: ^4.2.0
-  redux-immutable: ^4.0.0
-  redux-thunk: ^2.4.1
   sass: ^1.55.0
   swiper: ^8.4.4
   typescript: ^4.6.4
@@ -25,18 +23,16 @@ specifiers:
   vite: ^3.1.0
 
 dependencies:
+  '@reduxjs/toolkit': 1.9.0_kuo2ie247izvzll3jejufdtq3q
   axios: 1.1.3
-  better-scroll: 2.0.0-beta.10
+  better-scroll: 2.5.0
   immutable: 4.1.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-redux: 8.0.4_yfr4m6wk75wdra335rld4tkrbu
+  react-redux: 8.0.4_5uumaiclxbdbzaqafclbf6maf4
   react-router: 6.4.2_react@18.2.0
   react-router-config: 5.1.1_nttilez45pl4os7ifchn2aks6a
   react-router-dom: 6.4.2_biqbaboplfbrettd7655fr4n2y
-  redux: 4.2.0
-  redux-immutable: 4.0.0_immutable@4.1.0
-  redux-thunk: 2.4.1_redux@4.2.0
   swiper: 8.4.4
 
 devDependencies:
@@ -343,14 +339,44 @@ packages:
       '@better-scroll/shared-utils': 2.5.0
     dev: false
 
+  /@better-scroll/indicators/2.5.0:
+    resolution: {integrity: sha512-zSj6xBj7DaFLb+fxLllK6nm4LoDiF0/Wj2uCF+ruq82CzoiiRO7nk14cYONP+niURu1DUBpI4gYPsNxanPeHyA==}
+    dependencies:
+      '@better-scroll/core': 2.5.0
+    dev: false
+
+  /@better-scroll/infinity/2.5.0:
+    resolution: {integrity: sha512-GN2MH7NhYrusWQqENYVLBzldXodaTpx0gaRj7dgtjP8CDzQsWLZ/rw5NeG4exLDxxfDUELC28ZeA+X0SewoQHg==}
+    dependencies:
+      '@better-scroll/core': 2.5.0
+    dev: false
+
   /@better-scroll/mouse-wheel/2.5.0:
     resolution: {integrity: sha512-ZQLAinumoBlW+EO30bKWUcBhlhNh9fI9/8Q6KbIp4vkuUfAYzZPtaVjzFSTtbo5XTTqraH184jtUf3wY0zFNrA==}
     dependencies:
       '@better-scroll/core': 2.5.0
     dev: false
 
+  /@better-scroll/movable/2.5.0:
+    resolution: {integrity: sha512-zwOZnAEOGUvbM/01OFXwsOluPt7hhKiSPQUXl9XDAO4d6lTWpNak4mrcb3p0rPdX6TX6TbgglzPuQVvi4WXSlQ==}
+    dependencies:
+      '@better-scroll/core': 2.5.0
+    dev: false
+
+  /@better-scroll/nested-scroll/2.5.0:
+    resolution: {integrity: sha512-hBtM7S//rnoD47RsbFjSv+uW/PnpVf1V67gxqIIgzW1E1D0H4SSTddh4JNIMfZVxo2LijOsZBIrjCINiQtYeVw==}
+    dependencies:
+      '@better-scroll/core': 2.5.0
+    dev: false
+
   /@better-scroll/observe-dom/2.5.0:
     resolution: {integrity: sha512-E7wZooGYN9BKcJ+/Tto+GnDN5KNoXlnnde/0Vs9MuQqvI73neFpIcHD3MvX99DaGCpV3cOQlmCw0dmL9q+jEow==}
+    dependencies:
+      '@better-scroll/core': 2.5.0
+    dev: false
+
+  /@better-scroll/observe-image/2.5.0:
+    resolution: {integrity: sha512-CgtzTnwx3lHB8g6VROfq0gfI8d6Vds/tyDQ7M520eR2jcetnNiNt11dS63XIK/OcZugAmhuG2bzGRv8/DhiKhg==}
     dependencies:
       '@better-scroll/core': 2.5.0
     dev: false
@@ -492,6 +518,25 @@ packages:
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==, registry: http://registry.upchinaproduct.com/, tarball: http://registry.upchinaproduct.com/@polka/url/-/url-1.0.0-next.21.tgz}
     dev: true
+
+  /@reduxjs/toolkit/1.9.0_kuo2ie247izvzll3jejufdtq3q:
+    resolution: {integrity: sha512-ak11IrjYcUXRqlhNPwnz6AcvA2ynJTu8PzDbbqQw4a3xR4KZtgiqbNblQD+10CRbfK4+5C79SOyxnT9dhBqFnA==}
+    peerDependencies:
+      react: ^16.9.0 || ^17.0.0 || ^18
+      react-redux: ^7.2.1 || ^8.0.2
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-redux:
+        optional: true
+    dependencies:
+      immer: 9.0.16
+      react: 18.2.0
+      react-redux: 8.0.4_5uumaiclxbdbzaqafclbf6maf4
+      redux: 4.2.0
+      redux-thunk: 2.4.2_redux@4.2.0
+      reselect: 4.1.7
+    dev: false
 
   /@remix-run/router/1.0.2:
     resolution: {integrity: sha512-GRSOFhJzjGN+d4sKHTMSvNeUPoZiDHWmRnXfzaxrqe7dE/Nzlc8BiMSJdLDESZlndM7jIUrZ/F4yWqVYlI0rwQ==, registry: http://registry.upchinaproduct.com/, tarball: http://registry.upchinaproduct.com/@remix-run/router/-/router-1.0.2.tgz}
@@ -755,12 +800,17 @@ packages:
       - debug
     dev: false
 
-  /better-scroll/2.0.0-beta.10:
-    resolution: {integrity: sha512-oMiYG0nGA/xzwwdVpp1GZ2xxb1mvqey2p3Wj8Yn5zOlG1lfUt3tI2X1G/2ovDVP/oeyi3doIx3hPZxtRflUOQg==}
+  /better-scroll/2.5.0:
+    resolution: {integrity: sha512-bD5qnESbZevn99wHr7DhqhyI5KPg3aJXBUirOd33Qh59Ldw0wurl0wEQveoN6e2O+MXpxQ3PZeu813HppHkm6Q==}
     dependencies:
       '@better-scroll/core': 2.5.0
+      '@better-scroll/indicators': 2.5.0
+      '@better-scroll/infinity': 2.5.0
       '@better-scroll/mouse-wheel': 2.5.0
+      '@better-scroll/movable': 2.5.0
+      '@better-scroll/nested-scroll': 2.5.0
       '@better-scroll/observe-dom': 2.5.0
+      '@better-scroll/observe-image': 2.5.0
       '@better-scroll/pull-down': 2.5.0
       '@better-scroll/pull-up': 2.5.0
       '@better-scroll/scroll-bar': 2.5.0
@@ -1274,6 +1324,10 @@ packages:
     engines: {node: '>=10.17.0'}
     dev: true
 
+  /immer/9.0.16:
+    resolution: {integrity: sha512-qenGE7CstVm1NrHQbMh8YaSzTZTFNP3zPqr3YU0S0UY441j4bJTg4A2Hh5KAhwgaiU6ZZ1Ar6y/2f4TblnMReQ==}
+    dev: false
+
   /immutable/4.1.0:
     resolution: {integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==}
 
@@ -1535,7 +1589,7 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: false
 
-  /react-redux/8.0.4_yfr4m6wk75wdra335rld4tkrbu:
+  /react-redux/8.0.4_5uumaiclxbdbzaqafclbf6maf4:
     resolution: {integrity: sha512-yMfQ7mX6bWuicz2fids6cR1YT59VTuT8MKyyE310wJQlINKENCeT1UcPdEiX6znI5tF8zXyJ/VYvDgeGuaaNwQ==}
     peerDependencies:
       '@types/react': ^16.8 || ^17.0 || ^18.0
@@ -1565,7 +1619,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-is: 18.2.0
-      redux: 4.2.0
       use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
@@ -1622,16 +1675,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /redux-immutable/4.0.0_immutable@4.1.0:
-    resolution: {integrity: sha512-SchSn/DWfGb3oAejd+1hhHx01xUoxY+V7TeK0BKqpkLKiQPVFf7DYzEaKmrEVxsWxielKfSK9/Xq66YyxgR1cg==}
-    peerDependencies:
-      immutable: ^3.8.1 || ^4.0.0-rc.1
-    dependencies:
-      immutable: 4.1.0
-    dev: false
-
-  /redux-thunk/2.4.1_redux@4.2.0:
-    resolution: {integrity: sha512-OOYGNY5Jy2TWvTL1KgAlVy6dcx3siPJ1wTq741EPyUKfn6W6nChdICjZwCd0p8AZBs5kWpZlbkXW2nE/zjUa+Q==}
+  /redux-thunk/2.4.2_redux@4.2.0:
+    resolution: {integrity: sha512-+P3TjtnP0k/FEjcBL5FZpoovtvrTNT/UXd4/sluaSyrURlSlhLSzEdfsTBW7WsKB6yPvgd7q/iZPICFjW4o57Q==}
     peerDependencies:
       redux: ^4
     dependencies:
@@ -1646,6 +1691,10 @@ packages:
 
   /regenerator-runtime/0.13.10:
     resolution: {integrity: sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==}
+    dev: false
+
+  /reselect/4.1.7:
+    resolution: {integrity: sha512-Zu1xbUt3/OPwsXL46hvOOoQrap2azE7ZQbokq61BQfiXvhewsKDwhMeZjTX9sX0nvw1t/U5Audyn1I9P/m9z0A==}
     dev: false
 
   /resolve/1.22.1:

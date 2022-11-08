@@ -49,10 +49,12 @@
   .decorate {
     background: linear-gradient(hsla(0, 0%, 43%, .4), hsla(0, 0%, 100%, 0));
     @apply absolute top-0 w-full h-[35px] rounded-[3px];
+    // z-index: 11;
   }
   .play-count {
     @apply absolute right-[2px] top-[2px] 
     text-([12px] #f1f1f1) leading-[15px];
+    z-index: 99
   }
   .desc {
     @apply overflow-hidden mt-.5 py-0 px-.5 h-[50px] 

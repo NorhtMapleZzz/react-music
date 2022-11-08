@@ -14,4 +14,13 @@ export default defineConfig({
       '@': path.resolve('./src')
     }
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://musicapi.pengrengui.com/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
+  }
 })
