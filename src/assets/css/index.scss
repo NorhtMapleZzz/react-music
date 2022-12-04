@@ -61,3 +61,29 @@
     text-([12px] left #2E3030) leading-[1.4];
   }
 }
+
+.loading-wrapper {
+  >div {
+    @apply fixed left-0 right-0 top-0 bottom-0 w-60px h-60px
+    opacity-60 rounded-50% bg-#d44439;
+    z-index: 1000;
+    margin: auto;
+    animation: loading 1.4s infinite ease-in;
+  }
+  >div:nth-child(2) {
+    animation-delay: -0.7s;
+  }
+}
+
+@keyframes loading {
+  0%, 100% {
+    transform: scale(0.0);
+  }
+  50% {
+    transform: scale(1.0);
+  }
+}
+
+.nav-container {
+  @apply fixed box-border top-95px w-full p-5px overflow-hidden;
+}

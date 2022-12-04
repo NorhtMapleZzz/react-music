@@ -1,10 +1,10 @@
 import { fetchBannerList, fetchRecommendList } from '@/api';
-import type { RecommendListProps } from '@/components/RecommendList';
+import type { RecList } from '@/components/RecommendList';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 interface recommendState {
   bannerList: {imageUrl: string}[]
-  recommendList: RecommendListProps[]
+  recommendList: RecList[]
   loading: boolean
 }
 
@@ -38,6 +38,7 @@ export const recommendSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getBannerList.pending, (state) => {
+        console.log(state);
         state.loading = true
       })
       .addCase(getBannerList.fulfilled, (state, action) => {

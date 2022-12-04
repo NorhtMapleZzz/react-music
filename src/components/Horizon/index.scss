@@ -1,0 +1,19 @@
+.list {
+  width: fit-content;
+  white-space: nowrap;
+  @apply flex items-center h-30px overflow-hidden;
+  >span:first-of-type {
+    @apply block py-5px mr-5px text-gray text-14px;
+    flex: 0 0 auto;
+    vertical-align: middle;
+  }
+}
+
+.horizon-item {
+  flex: 0 0 auto;
+  @apply px-8px px-5px rounded-10px text-14px;
+  &.selected {
+    @apply opacity-80 text-#d44439;
+    border: 1px solid #d44439;
+  }
+}

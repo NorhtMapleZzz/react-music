@@ -1,0 +1,17 @@
+.list-container {
+  @apply fixed top-160px left-0 bottom-0
+  overflow-hidden w-full;
+}
+
+.singer-list {
+  flex-direction: column;
+  @apply flex m-auto overflow-hidden;
+  .title {
+    @apply m-10px mr-0 text-#2E3030 text-12px;
+  }
+}
+
+.singer-item {
+  @apply box-border flex mx-5px py-5px items-center;
+  border-bottom: 1px solid #e4e4e4;
+}

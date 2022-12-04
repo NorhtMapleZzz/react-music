@@ -9,19 +9,8 @@ interface Props {
 }
 
 function Slider(props: Props) {
-  // const [sliderSwiper, setSliderSwiper] = useState<Swiper>(null);
+  
   const { bannerList } = props;
-
-  // useEffect(() => {
-  //   if (bannerList.length && !sliderSwiper) {
-  //     let newSliderSwiper = new Swiper(".slider-container", {
-  //       loop: true,
-  //       autoplay: {delay: 3000, disableOnInteraction: false},
-  //       pagination: {el:'.swiper-pagination'}
-  //     })
-  //     setSliderSwiper(newSliderSwiper)
-  //   }
-  // }, [bannerList.length, sliderSwiper])
 
   return (
     <div className='slider-wrapper'>

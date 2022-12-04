@@ -49,7 +49,6 @@ const Scroll = forwardRef((props: Partial<Props>, ref: Ref<any>) => {
   useEffect(() => {
     if (!bScroll || !onScroll) return
     bScroll.on('scroll', (scroll) => {
-      console.log(scroll);
       onScroll(scroll)
     })
     return () => {

@@ -1,3 +1,4 @@
+import Loading from "@/components/Loading";
 import { memo, Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
@@ -38,7 +39,7 @@ function Home(props) {
         <NavLink className={({ isActive }) => (isActive ? " selected" : "")} to="/singers"><TabItem><span > 歌手 </span></TabItem></NavLink>
         <NavLink className={({ isActive }) => (isActive ? " selected" : "")} to="/rank"><TabItem><span > 排行榜 </span></TabItem></NavLink>
       </Tab>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading />}>
         <Outlet />
       </Suspense>
     </>
