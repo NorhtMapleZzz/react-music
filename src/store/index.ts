@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import recommendReducer from './reducer';
+import recommendReducer from './recommend';
+import singerReducer from "./singer";
 
 const store = configureStore({
   reducer: {
-    recommend: recommendReducer
+    recommend: recommendReducer,
+    singer: singerReducer
   },
   // devTools: process.env.
 })

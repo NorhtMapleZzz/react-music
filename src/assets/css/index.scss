@@ -87,3 +87,35 @@
 .nav-container {
   @apply fixed box-border top-95px w-full p-5px overflow-hidden;
 }
+
+@keyframes dance {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    transform-origin: center 100%;
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}
+
+.loading-v2 {
+  @apply h-10px w-full m-auto;
+  text-align: center;
+  font-size: 10px;
+  &>div {
+    @apply inline-block h-full w-1px mr-2px bg-[#d44439];
+    animation: dance 1s infinite;
+  }
+  &>div:nth-child(2) {
+    animation-delay: -0.4s;
+  }
+  &>div:nth-child(3) {
+    animation-delay: -0.6s;
+  }
+  &>div:nth-child(4) {
+    animation-delay: -0.5s;
+  }
+  &>div:nth-child(5) {
+    animation-delay: -0.2s;
+  }
+}

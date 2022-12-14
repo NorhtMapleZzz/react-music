@@ -2,14 +2,14 @@ import Loading from "@/components/Loading"
 import RecommendList from "@/components/RecommendList"
 import Scroll from "@/components/Scroll"
 import Slider from "@/components/Slider"
-import { useAppDispatch, useAppSelector } from "@/hooks/store"
-import { getBannerList, getRecommendList } from "@/store/reducer"
+import { useSelector, useDispatch } from "@/hooks/store"
+import { getBannerList, getRecommendList } from "@/store/recommend"
 import { memo, useEffect } from "react"
 import { forceCheck } from 'react-lazyload';
 
 function Recommend(props) {
-  const { bannerList, recommendList, loading } = useAppSelector(state => state.recommend)
-  const dispatch = useAppDispatch()
+  const { bannerList, recommendList, loading } = useSelector(state => state.recommend)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (!bannerList.length) dispatch(getBannerList())

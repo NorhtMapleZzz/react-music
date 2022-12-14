@@ -32,13 +32,10 @@ export const getRecommendList = createAsyncThunk('fetchRecommendList',
 export const recommendSlice = createSlice({
   name: 'recommend',
   initialState,
-  reducers: {
-
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getBannerList.pending, (state) => {
-        console.log(state);
         state.loading = true
       })
       .addCase(getBannerList.fulfilled, (state, action) => {

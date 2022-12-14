@@ -1,5 +1,9 @@
-import { forwardRef, memo, Ref, useEffect, useImperativeHandle, useRef, useState } from "react"
+import { forwardRef, memo, Ref, useEffect, useImperativeHandle, useMemo, useRef, useState } from "react"
 import BScroll from 'better-scroll';
+import '../Loading/index'
+import Loading from "../Loading/index";
+import LoadingV2 from "../Loading-V2";
+import { debounce } from "@/utils";
 
 type Props = {
   direction: 'vertical' | 'horizontal'
@@ -56,30 +60,41 @@ const Scroll = forwardRef((props: Partial<Props>, ref: Ref<any>) => {
     }
   }, [onScroll, bScroll])
 
+
+  let pullUpDebounce = useMemo(() => {
+    return debounce(pullUp, 300)
+  }, [pullUp])
+
+  let pullDownDebounce = useMemo(() => {
+    return debounce(pullDown, 300)
+  }, [pullDown])
+
   useEffect(() => {
     if (!bScroll || !pullUp) return
-    bScroll.on('scrollEnd', () => {
+    const handlePullUp = () => {
       if (bScroll.y <= bScroll.maxScrollY + 100) {
-        pullUp()
+        pullUpDebounce()
       }
-    })
-    return () =>{
-      bScroll.off('scrollEnd')
     }
-  }, [pullUp, bScroll])
+    bScroll.on('scrollEnd', handlePullUp)
+    return () =>{
+      bScroll.off('scrollEnd', handlePullUp)
+    }
+  }, [pullUp,pullUpDebounce, bScroll])
 
   useEffect(() => {
     if (!bScroll || !pullDown) return
-    bScroll.on('touchEnd', (pos: {y: number}) => {
+    const handlePullDown = (pos: {y: number}) => {
       if (pos.y > 50) {
-        pullDown()
-        console.log(2);
+        pullDownDebounce()
       }
-    })
-    return () => {
-      bScroll.off('touchEnd')
     }
-  }, [pullDown, bScroll])
+
+    bScroll.on('touchEnd', handlePullDown)
+    return () => {
+      bScroll.off('touchEnd', handlePullDown)
+    }
+  }, [pullDown, pullDownDebounce, bScroll])
 
   useImperativeHandle(ref, () => ({
     refresh() {
@@ -93,9 +108,25 @@ const Scroll = forwardRef((props: Partial<Props>, ref: Ref<any>) => {
     }
   }))
 
+  const PullUpDisplayStyle = pullUpLoading ? {display: ""} : { display:"none" };
+  const PullDownDisplayStyle = pullDownLoading ? { display: ""} : { display:"none" };
   return (
     <div ref={scrollContainerRef} className="w-full h-full overflow-hidden">
       {props.children}
+      {/* 底部加载 */}
+      <div 
+        className="absolute left-0 right-0 w-15 h-15 m-auto z-100"
+        style={ PullUpDisplayStyle }
+      >
+        <Loading></Loading>
+      </div>
+      {/* 顶部刷新 */}
+      <div 
+        className="absolute left-0 right-0 top-0 h-30px m-auto z-100"
+        style={ PullDownDisplayStyle }
+      >
+        <LoadingV2></LoadingV2>
+      </div>
     </div>
   )
 })
