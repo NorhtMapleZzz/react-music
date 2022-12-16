@@ -23,3 +23,7 @@ export const fetchSingerList = (category, alpha, count) => {
     }&initial=${alpha.toLowerCase()}&offset=${count}`
   )
 }
+
+export const fetchRankList = () => {
+  return axiosInstance.get(`/toplist/detail`)
+}

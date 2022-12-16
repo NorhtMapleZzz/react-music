@@ -1,0 +1,43 @@
+.rank-container {
+  @apply fixed top-90px bottom-0 w-full;
+  .official,.global {
+    @apply my-10px mx-5px pt-15px text-#2e3030;
+    font-weight: 700;
+    font-size: 14px;
+  }
+}
+
+.list-wrapper {
+  @apply mt-10px px-5px justify-between flex-row
+  flex-wrap bg-#f2f3f4;
+  &::after {
+    @apply content-none block w-32vw;
+  }
+}
+
+.list-child {
+  @apply py-3px;
+  border-bottom: 1px solid #e4e4e4;
+  .img_wrapper {
+    @apply rounded-3px relative;
+    .decorate {
+      @apply absolute bottom-0 w-full h-35px
+      rounded-3px;
+      background: linear-gradient (hsla (0,0%,100%,0),hsla (0,0%,43%,.4));
+    }
+    img {
+      @apply w-full h-full rounded-3px;
+    }
+    .update {
+      @apply absolute left-7px bottom-7px text-#f1f1f1;
+      font-size: 10px;
+    }
+  }
+}
+
+.song-list {
+  @apply flex flex-1 flex-col justify-around p-10px;
+  >li {
+    @apply text-12px text-gray;
+  }
+}
